@@ -1,21 +1,12 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background-color: #282c34;
+  min-height: 100vh;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +15,128 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  display: flex;
+  width: 80%;
+  margin: 1rem auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 50px;
+  box-shadow: inset 5px 5px 2px #282c34, inset -5px -5px 2px aliceblue;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
+button {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.mnemonic {
+  min-width: 5rem;
+  margin: 0.2rem;
+  background-color: aliceblue;
+}
+.btn {
+  outline: none;
+  border: 2px solid white;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: aqua;
+  box-shadow: 5px 5px 2px white, 5px 5px 2px #282c34;
+  margin: 0.5rem;
+}
+
+.mnemonic {
+  outline: none;
+  border: 1px solid wheat;
+}
+
+.btn:hover {
+  color: gray;
+  background-color: rgb(50, 255, 255);
+}
+
+.error {
+  display: inline-block;
+  position: relative;
+  background-color: red;
+}
+.cancel {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  background-color: aliceblue;
+  color: red;
+  border-radius: 50%;
+  right: -60%;
+  top: 2px;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 2px #282c34, 3px 3px 2px aliceblue;
+}
+main {
+  width: 40vw;
+  background-color: aliceblue;
+  margin: 20px auto;
+  border: 1px solid gray;
+  border-radius: 50px;
+  padding: 2rem;
+  font-family: roboto;
+}
+
+@media only screen and (max-width: 900px) {
+  .App {
+    min-height: 1000px;
+    background-color: #282c34;
+    overflow-x: hidden;
+  }
+  main {
+    min-width: 90%;
+    min-height: 900px;
+  }
+
+  .container {
+    overflow: auto;
+    min-width: 90%;
+  }
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  width: 32px;
+  height: 32px;
+  fill: aliceblue;
+  animation: spin 0.5s ease-in-out 0s infinite;
+  transition: transform 0.5s;
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+
+  50% {
+    transform: rotate(270deg);
+    color: #282c34;
+  }
+  100% {
     transform: rotate(360deg);
+    fill: aliceblue;
   }
 }
